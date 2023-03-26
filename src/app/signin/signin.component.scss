@@ -1,0 +1,41 @@
+#signUp{
+    background-color: #343a40;
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    background-color: #6e6e6e36;
+
+    box-shadow:-0.4px 1px 12px 10px #83848536;
+
+
+}
+.content{
+    background-color: #28a745;
+}
+.form-control{
+    border: 1px solid #28a745;
+    border-radius: 0;
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    
+    
+}
+.form-control:focus{
+    box-shadow: none;
+}
+.input-group-text{
+    border: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+
+}
+.col-md-12{
+    width: 100% !important;
+}
+.is-valid {
+    border-color: #17a2b8;
+}

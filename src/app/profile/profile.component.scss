@@ -1,0 +1,54 @@
+.note{
+    min-height: 250px;
+    
+    background-color: rgb(218, 167, 167);
+    border-radius: 15px;
+   
+}
+#profile{
+    min-height: 100vh;
+    background-color: rgb(126, 125, 125);
+}
+i{
+    cursor: pointer;
+}
+hr{
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0,0.5);
+}
+
+#sideBar{
+  
+    position: fixed;
+    top:350px;
+    left:0 ;
+    z-index: 99999;
+}
+#colorBox{
+    background-color: #ccc;
+    padding: 10px;
+}
+.color-box{
+display:inline-block;
+    width: 15px;
+    height: 15px;
+ border-radius: 50%;
+    background-color: yellowgreen;
+    cursor: pointer;
+  
+}
+#sideBar i{
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: #333;
+}
+.circle i{
+ font-size: 8px;
+ padding-right: 5px;
+}
+.content{
+    line-height: 2rem;
+}

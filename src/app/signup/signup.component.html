@@ -1,0 +1,103 @@
+<section class="vh-100" id='signUp'>
+   
+ <div class="container">
+    <form [formGroup]='signUp' (ngSubmit)=" signUp.valid&&formData()" class="row  g-3 w-50 m-auto">
+      <div class="col-md-12">
+          <h1 class="text-center text-white mb-4">Sign Up</h1>
+      </div>
+      <div class="col-md-12" *ngIf='error'>
+        <p  class="text-danger text-center fa-2x mb-4">{{error}}</p>
+      </div>
+      <div class="col-md-6" >
+        <div class=" flex-nowrap">
+            <div class="input-group-prepend mt-3">
+              <span class="input-group-text content" id="addon-wrapping"><i class="fas fa-sort-numeric-up-alt text-white"></i></span>
+              <input [class.is-valid]='signUp.controls.first_name.valid' [class.is-invalid]='signUp.controls.first_name.invalid&&signUp.controls.first_name.touched'  formControlName='first_name' type="text" class="form-control " placeholder="Enter firstName" aria-label="lastname" aria-describedby="addon-wrapping">
+         </div>
+          </div>
+          
+<div *ngIf='signUp.get("first_name")?.errors !=null&&signUp.get("first_name")?.touched' class="mt-1">
+  <span *ngIf='signUp.get("first_name")?.errors?.required'  class="text-danger ">first name is required</span>
+  <span *ngIf='signUp.get("first_name")?.errors?.minlength'  class="text-danger ">first name is minlength 3</span>
+  <span *ngIf='signUp.get("first_name")?.errors?.maxlength'  class="text-danger ">first name is maxlength 10</span>
+  <span *ngIf='signUp.get("first_name")?.errors?.pattern'  class="text-danger ">first name is invalid</span>
+
+</div>
+    </div>
+    <div class="col-md-6" >
+      <div class=" flex-nowrap">
+          <div class="input-group-prepend mt-3">
+            <span class="input-group-text content" id="addon-wrapping"><i class="fas fa-sort-numeric-up-alt text-white"></i></span>
+          <input [class.is-valid]='signUp.controls.last_name.valid' [class.is-invalid]='signUp.controls.last_name.invalid&&signUp.controls.last_name.touched' formControlName='last_name' type="text" class="form-control " placeholder="Enter lastName" aria-label="lastname" aria-describedby="addon-wrapping">
+        </div>
+        </div>
+        <div *ngIf='signUp.get("last_name")?.errors !=null&&signUp.get("last_name")?.touched' class="mt-1">
+          <span *ngIf='signUp.get("last_name")?.errors?.required'  class="text-danger ">last name is required</span>
+          <span *ngIf='signUp.get("last_name")?.errors?.minlength'  class="text-danger ">last name is minlength 3</span>
+          <span *ngIf='signUp.get("last_name")?.errors?.maxlength'  class="text-danger ">last name is maxlength 10</span>
+          <span *ngIf='signUp.get("last_name")?.errors?.pattern'  class="text-danger ">last name is invalid</span>
+        
+        </div>
+  </div>
+   
+        <div class="col-md-12" >
+            <div class=" flex-nowrap">
+                <div class="input-group-prepend mt-3">
+                  <span class="input-group-text content" id="addon-wrapping"><i class="fas fa-sort-numeric-up-alt text-white"></i></span>
+                  <input [class.is-valid]='signUp.controls.age.valid'  [class.is-invalid]='signUp.controls.age.invalid&&signUp.controls.age.touched'  formControlName='age' type="number" class="form-control " placeholder="Enter age" aria-label="email" aria-describedby="addon-wrapping">
+              </div>
+              </div>
+              <div *ngIf='signUp.get("age")?.errors !=null&&signUp.get("age")?.touched'>
+                <span *ngIf='signUp.get("age")?.errors?.required'  class="text-danger ">age is required</span>
+                <span *ngIf='signUp.get("age")?.errors?.min'  class="text-danger ">age is min 12</span>
+                <span *ngIf='signUp.get("age")?.errors?.max'  class="text-danger ">age is max 80</span>
+            </div>
+        </div>
+        <div class="col-md-12" >
+            <div class=" flex-nowrap">
+                <div class="input-group-prepend mt-3">
+                  <span class="input-group-text content" id="addon-wrapping"><i class="fas fa-envelope-square text-white"></i></span>
+                <input [class.is-valid]='signUp.controls.email.valid' [class.is-invalid]='signUp.controls.email.invalid&&signUp.controls.email.touched'  formControlName='email' type="email" class="form-control " placeholder="Enter Email" aria-label="email" aria-describedby="addon-wrapping">
+              </div>
+              </div>
+              <div *ngIf='signUp.get("email")?.errors !=null&&signUp.get("email")?.touched'>
+                <span *ngIf='signUp.get("email")?.errors?.required'  class="text-danger ">email is required</span>
+                <span *ngIf='signUp.get("email")?.errors?.email'  class="text-danger ">email in invalied</span>
+             
+            </div>
+        </div>
+        <div class="col-md-12" >
+            <div class=" flex-nowrap">
+                <div class="input-group-prepend mt-3">
+                  <span class="input-group-text content" id="addon-wrapping"><i class="fas fa-lock text-white"></i></span>
+                <input [class.is-valid]='signUp.controls.password.valid' [class.is-invalid]='signUp.controls.password.invalid&&signUp.controls.password.touched'  formControlName='password' type="password" class="form-control " placeholder="Enter password" aria-label="password" aria-describedby="addon-wrapping">
+              </div>
+              </div>
+              <div *ngIf='signUp.get("password")?.errors !=null&&signUp.get("password")?.touched'>
+                <span *ngIf='signUp.get("password")?.errors?.required'  class="text-danger ">password is required</span>
+                <span *ngIf='signUp.get("password")?.errors?.pattern'  class="text-danger ">password must has Minimum eight characters, at least one letter, one number and one special character: </span>
+             
+            </div>
+        </div>
+         
+      
+        <div class="col-12">
+          <button [disabled]='signUp.invalid'[ngStyle]="signUp.invalid? isStyleValid:isStyleInvalid"  type="submit" class="btn btn-info mt-3"><span *ngIf="!isclicked">Sign Up</span><span *ngIf="isclicked">waiting....</span></button>
+            </div>
+            <div class="col-md-12" *ngIf='isSucessed'>
+              <p  class="text-success text-center fa-2x mb-4">{{isSucess}}</p>
+            </div>
+      </form>
+
+
+
+
+
+</div> 
+
+</section>
+
+
+
+
+
