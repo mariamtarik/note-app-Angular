@@ -39,3 +39,11 @@ form{
 .is-valid {
     border-color: #17a2b8;
 }
+.register-form{
+    width: 50%;
+}
+@media only screen and (max-width: 600px) {
+    .register-form {
+      width: 90% !important;
+    }
+  }
